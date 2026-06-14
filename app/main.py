@@ -1,8 +1,13 @@
 from __future__ import annotations
 
 
+class AnimalList(list):
+    def __str__(self) -> str:
+        return "[" + ", ".join(repr(animal) for animal in self) + "]"
+
+
 class Animal:
-    alive: list[Animal] = []
+    alive: AnimalList = AnimalList()
 
     def __init__(
             self,
